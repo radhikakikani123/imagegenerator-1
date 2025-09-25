@@ -1,6 +1,6 @@
 import React from 'react';
 
-const categories = ['Saree', 'Kurti', 'Dress', 'Shirt', 'Pants', 'lehenga choli', 'watch'];
+const categories = ['Saree', 'Kurti', 'Dress', 'Shirt', 'Pants', 'lehenga choli', 'watch', 'jewellery', 'shoes', 'bags', 'sunglasses', 'hats', 'coats', 'jackets', 'skirts', 'shorts', 't-shirts', 'sneakers', 'boots'];
 
 export default function CategorySelector({ selected, onSelect }) {
   return (

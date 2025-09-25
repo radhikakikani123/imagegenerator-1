@@ -16,6 +16,7 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: 600;
+  text-align:center;
   color: #222;
   margin-bottom: 1em;
 }
@@ -42,6 +43,7 @@ a:hover {
   color: #0056b3;
 }
 
+
 .category-selector {
   display: flex;
   flex-direction: column;
@@ -59,7 +61,7 @@ select, input[type='file'] {
   padding: 0.6em 1em;
   border-radius: 8px;
   border: 1px solid #d1d5db;
-  background: #f7f8fa;
+  background: #f7f8fa; 
   font-size: 1em;
   margin-bottom: 1em;
 }
@@ -171,4 +173,43 @@ button:hover, .download-btn:hover {
     width: 72px;
     height: 72px;
   }
+}
+
+.delete-btn {
+  background: #ff4d4f;         /* red tone */
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1em;             /* spacing below the image */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;          /* 👈 keeps it centered */
+}
+
+.delete-btn:hover {
+  background: #d9363e;         /* darker red on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.uploaded-img {
+  max-width: 100%;       /* shrink to fit parent width */
+  max-height: 50vh;      /* don’t exceed 70% of viewport height */
+  object-fit: contain;   /* keep aspect ratio */
+  display: block;
+  margin: 1.5em auto;    /* equal spacing on all sides, centered */
+  border-radius: 12px;   /* consistent with your gallery style */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.image-preview-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;          /* spacing inside section */
 }
