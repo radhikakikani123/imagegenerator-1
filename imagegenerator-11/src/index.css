@@ -1,68 +1,174 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+body {
+  font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+  background: #f7f8fa;
+  color: #222;
+  margin: 0;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+.App {
+  max-width: 480px;
+  margin: 3em auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5em 2em 2em 2em;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 2em;
+  padding: 1em 0;
 }
 
 a {
+  color: #007bff;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
 }
+
 a:hover {
-  color: #535bf2;
+  color: #0056b3;
 }
 
-body {
-  margin: 0;
+.category-selector {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.category-selector label {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: #444;
 }
 
-button {
+select, input[type='file'] {
+  padding: 0.6em 1em;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border: 1px solid #d1d5db;
+  background: #f7f8fa;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-bottom: 1em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button, .download-btn {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.5em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-top: 1em;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:disabled, .download-btn:disabled {
+  background: #b0b8c1;
+  cursor: not-allowed;
+}
+
+button:hover, .download-btn:hover {
+  background: linear-gradient(90deg, #0056b3 0%, #007bff 100%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.image-preview img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  margin-bottom: 1em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.gallery img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+}
+
+.generate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 0 2em 0;
+}
+
+.generate-label {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1.2em;
+}
+
+.generate-rectangle {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  width: 340px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 500px) {
+  .generate-rectangle {
+    width: 98vw;
+    height: 90px;
+    font-size: 1.1em;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (max-width: 600px) {
+  .App {
+    max-width: 98vw;
+    padding: 1em;
   }
-  button {
-    background-color: #f9f9f9;
+  .gallery img {
+    width: 72px;
+    height: 72px;
   }
 }

@@ -1,0 +1,25 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f6f8fa;
+  margin: 0;
+  color: #222;
+}
+
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.category-selector, .image-preview, .gallery {
+  margin: 1em 0;
+}
